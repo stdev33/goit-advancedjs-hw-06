@@ -3,8 +3,11 @@
   Використовуйте generics, щоб вказати, що ці об'єкти можуть бути будь-якого типу.
 */
 
-function merge (objA, objB) {
+function merge<TTarget extends {}, TSource>(
+  objA: TTarget,
+  objB: TSource
+): TTarget & TSource {
   return Object.assign(objA, objB);
 }
 
-export {}
+export {};
